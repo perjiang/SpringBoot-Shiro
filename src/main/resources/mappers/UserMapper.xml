@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jx.Dao.UserDao">
+
+    <insert id="insertUser" parameterType="com.jx.Beans.user">
+        insert into users(username,password,salt) value (#{username},#{password},#{salt})
+    </insert>
+    <select id="SelectUserByName" resultType="com.jx.Beans.user">
+        select * from users where  username = #{username}
+    </select>
+</mapper>
